@@ -1,38 +1,53 @@
-import Image from "next/image";
 import { SERVICES } from "@/constants/site-config";
 import SectionTitle from "@/components/ui/SectionTitle";
+import ServiceCard from "@/components/ui/ServiceCard";
+
+// Categories per service (optional)
+const CATEGORIES = [
+  "Training",
+  "Development",
+  "Education",
+  "Consultancy",
+  "Design",
+  "Safety",
+];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 px-6 sm:px-12 lg:px-20 bg-background">
-      <SectionTitle
-        label="What we offer"
-        title="Quality Services"
-        subtitle="From foundational computer courses to full-scale engineering consultancy."
+    <section
+      id="services"
+      className="relative py-24 px-6 sm:px-12 lg:px-20 bg-muted/20 overflow-hidden"
+    >
+      {/* Background decorations */}
+      <div
+        className="absolute top-20 left-10 w-72 h-72 bg-[#E8711A]/5 rounded-full blur-3xl"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-[#F5A623]/5 rounded-full blur-3xl"
+        aria-hidden="true"
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {SERVICES.map((service) => (
-          <div key={service.title} className="group cursor-pointer">
-            {/* Image */}
-            <div className="relative w-full h-64 overflow-hidden rounded-sm mb-5">
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <SectionTitle
+          label="What we offer"
+          title="Quality Services"
+          subtitle="From foundational computer courses to full-scale engineering consultancy."
+        />
 
-            {/* Text */}
-            <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-[#E8711A] transition-colors">
-              {service.title}
-            </h3>
-            <p className="text-[15px] text-muted-foreground leading-relaxed">
-              {service.description}
-            </p>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
+          {SERVICES.map((service, idx) => (
+            <ServiceCard
+              key={service.title}
+              image={service.image}
+              title={service.title}
+              description={service.description}
+              index={idx}
+              category={CATEGORIES[idx] || "Service"}
+              href={`/services#${service.title.toLowerCase().replace(/\s+/g, "-")}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
