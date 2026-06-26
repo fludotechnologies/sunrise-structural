@@ -2,7 +2,6 @@ import { SERVICES } from "@/constants/site-config";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ServiceCard from "@/components/ui/ServiceCard";
 
-// Categories per service (optional)
 const CATEGORIES = [
   "Training",
   "Development",
@@ -16,15 +15,15 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-24 px-6 sm:px-12 lg:px-20 bg-muted/20 overflow-hidden"
+      className="relative py-24 px-6 sm:px-12 lg:px-20 bg-[hsl(var(--color-background-alt))] overflow-hidden"
     >
       {/* Background decorations */}
       <div
-        className="absolute top-20 left-10 w-72 h-72 bg-[#E8711A]/5 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-72 h-72 bg-[hsl(var(--color-primary)/0.06)] rounded-full blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-[#F5A623]/5 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-96 h-96 bg-[hsl(var(--color-secondary)/0.08)] rounded-full blur-3xl"
         aria-hidden="true"
       />
 

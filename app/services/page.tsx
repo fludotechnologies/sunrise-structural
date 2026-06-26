@@ -5,14 +5,29 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Page header */}
-      <div className="px-6 py-16 text-center bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]">
-        <span className="inline-block bg-[#E8711A]/20 text-[#E8711A] border border-[#E8711A]/40 px-4 py-1 rounded-full text-[11px] font-medium uppercase tracking-[0.05em] mb-4">
-          What we offer
-        </span>
-        <h1 className="text-4xl font-medium text-white mb-3">Our Services</h1>
-        <p className="text-white/70 max-w-md mx-auto text-[15px] leading-relaxed">
-          From foundational computer courses to full-scale engineering consultancy.
-        </p>
+      <div className="relative px-6 pt-32 pb-20 text-center bg-gradient-to-br from-[hsl(var(--color-primary-dark))] via-[hsl(var(--color-primary))] to-[hsl(var(--color-primary-light))] overflow-hidden">
+        {/* Decorative blobs */}
+        <div
+          className="absolute top-10 right-10 w-72 h-72 bg-[hsl(var(--color-secondary)/0.15)] rounded-full blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute bottom-10 left-10 w-96 h-96 bg-[hsl(var(--color-accent)/0.1)] rounded-full blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10">
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[hsl(var(--color-primary-foreground))] mb-4 leading-tight">
+            Our{" "}
+            <span className="text-gradient-gold">Services</span>
+          </h1>
+
+          <p className="text-[hsl(var(--color-primary-foreground)/0.75)] max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
+            From foundational computer courses to full-scale engineering
+            consultancy — explore everything we offer.
+          </p>
+        </div>
       </div>
 
       <ServicesSection />

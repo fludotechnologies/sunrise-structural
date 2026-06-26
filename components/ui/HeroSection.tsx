@@ -4,40 +4,74 @@ import { HERO_CONTENT } from "@/constants/site-config";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden min-h-[80vh] flex items-center px-6 sm:px-12 lg:px-20 pt-20 pb-40">
-      {/* ↑ Extra pb-40 creates room for About card to overlap */}
+    <section className="relative overflow-hidden min-h-screen flex items-end px-6 sm:px-12 lg:px-20 pt-32 pb-20 sm:pb-24">
+      {/* Background image */}
       <Image
         src={HERO_CONTENT.backgroundImage}
         alt=""
         fill
         priority
-        quality={85}
+        quality={90}
         className="object-cover object-center -z-10"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e]/90 via-[#16213e]/80 to-[#0f3460]/70 -z-10" />
+      {/* Cinematic dark overlay — heavier at bottom for text legibility */}
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/30 -z-10"
+        aria-hidden="true"
+      />
 
-      <div className="relative z-10 max-w-6xl w-full">
-        <p className="text-[#E8711A] text-lg sm:text-xl font-semibold mb-4 tracking-wide">
-          {HERO_CONTENT.eyebrow}
-        </p>
+      {/* Subtle warm tint */}
+      <div
+        className="absolute inset-0 bg-[hsl(var(--color-primary-dark)/0.15)] -z-10"
+        aria-hidden="true"
+      />
 
-        <h1 className="text-white font-bold leading-[0.95] mb-8 text-5xl sm:text-7xl lg:text-8xl xl:text-9xl tracking-tight">
-          {HERO_CONTENT.titlePart1}{" "}
-          <span className="text-[#E8711A]">+</span>{" "}
-          {HERO_CONTENT.titlePart2}
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl w-full">
+        {/* Eyebrow with line accent */}
+        <div className="flex items-center gap-4 mb-6">
+          <span className="h-px w-10 bg-white/60" />
+          <p className="text-white/90 text-[11px] sm:text-xs font-semibold tracking-[0.3em] uppercase">
+            {HERO_CONTENT.eyebrow}
+          </p>
+        </div>
+
+        <h1 className="font-serif text-white font-bold leading-[1.05] mb-10 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight max-w-5xl">
+          {HERO_CONTENT.titleStart}{" "}
+          <span className="font-serif text-white/95">
+            {HERO_CONTENT.titleAccent}
+          </span>{" "}
+          {HERO_CONTENT.titleEnd}
         </h1>
 
-        <p className="text-white/80 text-[15px] sm:text-base max-w-2xl leading-relaxed mb-10">
-          {HERO_CONTENT.description}
-        </p>
+        {/* CTA row */}
+        <div className="flex flex-wrap items-center gap-6">
+          <Link
+            href={HERO_CONTENT.primaryCta.href}
+            className="group inline-flex items-center gap-2 bg-white hover:bg-[hsl(var(--color-secondary))] transition-all duration-300 text-[hsl(var(--color-primary-dark))] hover:text-[hsl(var(--color-secondary-foreground))] pl-6 pr-1.5 py-1.5 rounded-full font-medium text-base shadow-xl"
+          >
+            <span className="mr-1">{HERO_CONTENT.primaryCta.label}</span>
+            <span className="w-10 h-10 rounded-full bg-[hsl(var(--color-primary-dark))] group-hover:bg-[hsl(var(--color-primary))] flex items-center justify-center transition-colors">
+              <i
+                className="ti ti-arrow-up-right text-white text-lg group-hover:rotate-45 transition-transform duration-300"
+                aria-hidden="true"
+              />
+            </span>
+          </Link>
 
-        <Link
-          href={HERO_CONTENT.ctaHref}
-          className="inline-block border-2 border-white/80 hover:border-[#E8711A] hover:bg-[#E8711A] transition-all text-white px-10 py-3.5 text-sm font-semibold tracking-[0.15em] uppercase"
-        >
-          {HERO_CONTENT.ctaLabel}
-        </Link>
+          {/* Secondary text link with arrow */}
+          <Link
+            href={HERO_CONTENT.secondaryCta.href}
+            className="group inline-flex items-center gap-2 text-white font-medium text-base border-b border-white/40 hover:border-white pb-1 transition-colors"
+          >
+            {HERO_CONTENT.secondaryCta.label}
+            <i
+              className="ti ti-arrow-up-right text-base group-hover:rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
       </div>
     </section>
   );

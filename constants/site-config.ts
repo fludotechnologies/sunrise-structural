@@ -39,13 +39,14 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO_CONTENT = {
-  eyebrow: "Let's Move Forward",
-  titlePart1: "EDUCATION",
-  titlePart2: "PROJECTS",
+  eyebrow: "Education × Projects",
+  titleStart: "We empower learners with real expertise,",
+  titleAccent: "practical",
+  titleEnd: "projects and proven results.",
   description:
-    "Our dedicated team will help you to sort out all the technical issues which may affect your business or project. We have been in the industry for training for the last 23 years. We have 100+ dedicated Engineers and Project Managers to complete the Project(s).",
-  ctaLabel: "Contact Us",
-  ctaHref: "#contact",
+    "Our dedicated team will help you to sort out all the technical issues which may affect your business or project. We have been in the industry for training for the last 23 years.",
+  primaryCta: { label: "Get in touch", href: "#contact" },
+  secondaryCta: { label: "Our Services", href: "/services" },
   backgroundImage: "/images/hero-bg.png",
 } as const;
 

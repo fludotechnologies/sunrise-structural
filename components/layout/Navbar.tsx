@@ -23,22 +23,25 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out
         ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-lg shadow-black/5"
-            : "bg-white border-b border-gray-200"
+            ? "bg-[hsl(var(--color-surface)/0.9)] backdrop-blur-xl border-b border-[hsl(var(--color-border))] shadow-lg shadow-black/5"
+            : "bg-[hsl(var(--color-surface))] border-b border-[hsl(var(--color-border))]"
         }
       `}
     >
       <nav className="flex items-center justify-between px-6 sm:px-12 lg:px-20 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
-          <div className="w-[38px] h-[38px] rounded-lg bg-[#E8711A] flex items-center justify-center">
-            <i className="ti ti-sun text-white text-xl" aria-hidden="true" />
+          <div className="w-[38px] h-[38px] rounded-lg bg-[hsl(var(--color-primary))] flex items-center justify-center shadow-md">
+            <i
+              className="ti ti-sun text-[hsl(var(--color-primary-foreground))] text-xl"
+              aria-hidden="true"
+            />
           </div>
           <div className="hidden sm:block">
-            <p className="text-[15px] font-medium leading-tight text-gray-900">
+            <p className="text-[15px] font-semibold leading-tight text-[hsl(var(--color-foreground))]">
               {SITE_CONFIG.name}
             </p>
-            <span className="text-[11px] text-gray-500 font-normal">
+            <span className="text-[11px] text-[hsl(var(--color-foreground-muted))] font-normal">
               {SITE_CONFIG.tagline}
             </span>
           </div>
@@ -50,7 +53,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-600 hover:text-[#E8711A] font-medium transition-colors"
+              className="text-sm text-[hsl(var(--color-foreground-muted))] hover:text-[hsl(var(--color-primary))] font-medium transition-colors"
             >
               {link.label}
             </Link>
@@ -61,7 +64,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="#contact"
-            className="hidden sm:inline-block bg-[#E8711A] hover:bg-[#d4621a] transition-colors text-white text-sm font-semibold px-5 py-2 rounded-full"
+            className="hidden sm:inline-block bg-[hsl(var(--color-primary))] hover:bg-[hsl(var(--color-primary-dark))] transition-colors text-[hsl(var(--color-primary-foreground))] text-sm font-semibold px-5 py-2 rounded-full shadow-md hover:shadow-lg"
           >
             Get a Quote
           </Link>
@@ -73,17 +76,17 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-5 h-0.5 bg-gray-900 transition-all ${
+              className={`block w-5 h-0.5 bg-[hsl(var(--color-foreground))] transition-all ${
                 menuOpen ? "rotate-45 translate-y-1.5" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-gray-900 transition-all ${
+              className={`block w-5 h-0.5 bg-[hsl(var(--color-foreground))] transition-all ${
                 menuOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-gray-900 transition-all ${
+              className={`block w-5 h-0.5 bg-[hsl(var(--color-foreground))] transition-all ${
                 menuOpen ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             />
@@ -93,13 +96,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4 flex flex-col gap-4 shadow-lg">
+        <div className="md:hidden bg-[hsl(var(--color-surface))] border-t border-[hsl(var(--color-border))] px-6 py-4 flex flex-col gap-4 shadow-lg">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm text-gray-700 hover:text-[#E8711A] font-medium transition-colors"
+              className="text-sm text-[hsl(var(--color-foreground-muted))] hover:text-[hsl(var(--color-primary))] font-medium transition-colors"
             >
               {link.label}
             </Link>
@@ -107,7 +110,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="bg-[#E8711A] text-white text-sm font-semibold px-4 py-2 rounded-full text-center"
+            className="bg-[hsl(var(--color-primary))] hover:bg-[hsl(var(--color-primary-dark))] text-[hsl(var(--color-primary-foreground))] text-sm font-semibold px-4 py-2 rounded-full text-center transition-colors"
           >
             Get a Quote
           </Link>
