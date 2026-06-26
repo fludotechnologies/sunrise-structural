@@ -212,6 +212,24 @@ export const TESTIMONIALS = [
     rating: 5,
   },
   {
+    initials: "AK",
+    name: "Anand Krishnan",
+    role: "Senior MEP Engineer",
+    company: "Cochin Tech Spaces",
+    quote:
+      "Excellent coordination and technical depth. Their expertise in Kerala's specific structural requirements helped us navigate a complex waterfront project seamlessly.",
+    rating: 5,
+  },
+  {
+    initials: "RV",
+    name: "Ramesh Varma",
+    role: "Managing Director",
+    company: "Malabar Developers",
+    quote:
+      "Highly professional team. They bring international BIM standards to our local projects, ensuring zero clashes and significant cost savings during construction.",
+    rating: 5,
+  },
+  {
     initials: "AS",
     name: "Ann Smith",
     role: "Project Manager",
