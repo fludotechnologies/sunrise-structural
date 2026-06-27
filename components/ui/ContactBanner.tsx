@@ -75,11 +75,10 @@ ${formData.message}`;
           </p>
         </div>
 
-        {/* Main grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        {/* Main grid — items-stretch ensures both columns are equal height */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
           {/* LEFT — Quick info */}
-          {/* LEFT — Quick info */}
-          <div className="lg:col-span-2 bg-[hsl(var(--color-secondary)/0.06)] border border-[hsl(var(--color-secondary)/0.15)] rounded-3xl p-8 sm:p-10 flex flex-col h-full">
+          <div className="lg:col-span-2 bg-[hsl(var(--color-secondary)/0.06)] border border-[hsl(var(--color-secondary)/0.15)] rounded-3xl p-8 sm:p-10 flex flex-col">
             {/* Header */}
             <div>
               <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[hsl(var(--color-secondary))] mb-3">
@@ -98,7 +97,7 @@ ${formData.message}`;
             <div className="h-px w-full bg-[hsl(var(--color-secondary)/0.2)] my-8" />
 
             {/* Contact details — distributed evenly */}
-            <div className="flex-1 flex flex-col justify-between gap-6">
+            <div className="flex flex-col gap-6">
               {/* Phone */}
               <div className="group flex items-start gap-4">
                 <div className="w-11 h-11 rounded-xl bg-[hsl(var(--color-secondary)/0.15)] group-hover:bg-[hsl(var(--color-secondary))] flex items-center justify-center shrink-0 transition-colors duration-300">
@@ -158,32 +157,10 @@ ${formData.message}`;
                   </p>
                 </div>
               </div>
-
-              {/* Working Hours */}
-              <div className="group flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-[hsl(var(--color-secondary)/0.15)] group-hover:bg-[hsl(var(--color-secondary))] flex items-center justify-center shrink-0 transition-colors duration-300">
-                  <i
-                    className="ti ti-clock text-[hsl(var(--color-secondary))] group-hover:text-[hsl(var(--color-secondary-foreground))] text-lg transition-colors"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[11px] uppercase tracking-wider text-[hsl(var(--color-foreground-muted))] font-semibold mb-1">
-                    Working hours
-                  </p>
-                  <div className="text-sm font-semibold text-[hsl(var(--color-foreground))] space-y-0.5">
-                    <p>{SITE_CONFIG.hours.weekdays}</p>
-                    <p>{SITE_CONFIG.hours.saturday}</p>
-                    <p className="text-[hsl(var(--color-foreground-muted))] font-medium">
-                      {SITE_CONFIG.hours.sunday}
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Social — pinned to bottom */}
-            <div className="mt-8 pt-8 border-t border-[hsl(var(--color-secondary)/0.2)]">
+            <div className="mt-auto pt-8 border-t border-[hsl(var(--color-secondary)/0.2)]">
               <p className="text-xs uppercase tracking-wider text-[hsl(var(--color-foreground-muted))] font-semibold mb-4">
                 Follow us on
               </p>
@@ -208,9 +185,8 @@ ${formData.message}`;
           </div>
 
           {/* RIGHT — Form */}
-          <div className="lg:col-span-3">
-            <div className="form-dark bg-linear-to-br from-[hsl(var(--color-primary))] to-[hsl(var(--color-primary-dark))] rounded-3xl p-8 sm:p-10 text-[hsl(var(--color-primary-foreground))] h-full shadow-luxury">
-              {" "}
+          <div className="lg:col-span-3 flex flex-col">
+            <div className="form-dark bg-linear-to-br from-[hsl(var(--color-primary))] to-[hsl(var(--color-primary-dark))] rounded-3xl p-8 sm:p-10 text-[hsl(var(--color-primary-foreground))] flex-1 shadow-luxury">
               <h3 className="text-2xl text-[hsl(var(--color-primary-foreground))] sm:text-3xl font-bold mb-3">
                 Fill out the form, we&apos;ll reply soon
               </h3>
@@ -323,7 +299,7 @@ ${formData.message}`;
                   </div>
                 </div>
 
-                {/* Submit button - GOLD for premium feel */}
+                {/* Submit button */}
                 <button
                   type="submit"
                   disabled={submitting}

@@ -3,13 +3,8 @@ export const SITE_CONFIG = {
   tagline: "Engineering & Training",
   email: "structuralsunrise@gmail.com",
   phone: "058-633 0155",
-  whatsapp: "971586330155", // UAE country code (971) + number without leading 0
-  address: "Business Bay, Dubai, United Arab Emirates",
-  hours: {
-    weekdays: "Mon – Fri: 9:00 AM – 6:00 PM",
-    saturday: "Saturday: 10:00 AM – 2:00 PM",
-    sunday: "Sunday: Closed",
-  },
+  whatsapp: "971586330155", 
+  address: "Al Batha Area,Sharjah UAE",
   copyright: "© 2026 Sunrise Structural. All rights reserved.",
 } as const;
 
@@ -89,20 +84,6 @@ export const STATS = [
 export const SERVICES = [
   {
     image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-    title: "Computer Training",
-    description:
-      "Computer Software & Hardware courses for Corporates and Individuals.",
-    features: [
-      "Software Training",
-      "PC Hardware Upgrade",
-      "Complete Computer Setup",
-      "Custom Build",
-      "And More",
-    ],
-  },
-  {
-    image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
     title: "Computer Programming",
     description:
@@ -148,7 +129,7 @@ export const SERVICES = [
   {
     image:
       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
-    title: "Safety Service",
+    title: "Safety Service Courses",
     description:
       "Building safety equipment, engineers, and labour to keep your site compliant.",
     features: [
@@ -156,6 +137,20 @@ export const SERVICES = [
       "PPE Supply",
       "Trained Engineers",
       "Compliance Reports",
+      "And More",
+    ],
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+    title: "Computer Hardware Training",
+    description:
+      "Computer Software & Hardware courses for Corporates and Individuals.",
+    features: [
+      "Software Training",
+      "PC Hardware Upgrade",
+      "Complete Computer Setup",
+      "Custom Build",
       "And More",
     ],
   },
