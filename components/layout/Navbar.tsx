@@ -36,7 +36,7 @@ export default function Navbar() {
             : "scale-100 rounded-none border-b border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface))] shadow-none"
         }`}
       >
-        <nav className="mx-auto flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center px-6 sm:px-12 lg:px-20 py-3 max-w-7xl">
+        <nav className="mx-auto flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center px-6 sm:px-12 lg:px-20 py-3 max-w-8xl">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <div className="relative w-[44px] h-[44px] rounded-lg overflow-hidden shadow-md ring-1 ring-[hsl(var(--color-border))]">
