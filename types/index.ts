@@ -9,9 +9,13 @@ export interface Stat {
 }
 
 export interface Service {
-  icon: string;
+  image: string;
   title: string;
   description: string;
+  features: readonly string[];
+  icon?: string;
+  category?: string;
+  isCore?: boolean;
 }
 
 export interface SustainabilityBadge {

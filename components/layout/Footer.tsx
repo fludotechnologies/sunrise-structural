@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   SITE_CONFIG,
   NAV_LINKS,
@@ -27,10 +28,14 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-[42px] h-[42px] rounded-lg bg-[hsl(var(--color-secondary))] flex items-center justify-center shadow-gold">
-                <i
-                  className="ti ti-sun text-[hsl(var(--color-secondary-foreground))] text-xl"
-                  aria-hidden="true"
+              {/* Logo image */}
+              <div className="relative w-[48px] h-[48px] rounded-lg overflow-hidden shadow-gold ring-2 ring-[hsl(var(--color-secondary)/0.3)]">
+                <Image
+                  src="/images/logo.png"
+                  alt={`${SITE_CONFIG.name} logo`}
+                  fill
+                  sizes="48px"
+                  className="object-cover"
                 />
               </div>
               <div>

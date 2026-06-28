@@ -1,109 +1,90 @@
-import Link from "next/link";
-import Image from "next/image";
 import { SUSTAINABILITY_CONTENT } from "@/constants/site-config";
 
 export default function SustainabilitySection() {
-  const { left, right } = SUSTAINABILITY_CONTENT;
+  const { eyebrow, subtitle, features, highlights } = SUSTAINABILITY_CONTENT;
 
   return (
-    <section className="bg-[hsl(var(--color-background))] py-16 px-4 sm:px-8 lg:px-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-3xl shadow-luxury">
-        {/* LEFT — Deep teal banner */}
-        <div className="relative min-h-[480px] flex items-center px-8 sm:px-12 py-16 overflow-hidden">
-          {/* Background image */}
-          <Image src={left.image} alt="" fill className="object-cover" />
-
-          {/* Deep teal overlay (theme-aware) */}
-          <div
-            className="absolute inset-0 bg-[hsl(var(--color-primary-dark)/0.9)]"
-            aria-hidden="true"
-          />
-
-          {/* Decorative gold accent */}
-          <div
-            className="absolute -top-20 -right-20 w-64 h-64 bg-[hsl(var(--color-secondary)/0.15)] rounded-full blur-3xl"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute -bottom-16 -left-16 w-48 h-48 border-[3px] border-[hsl(var(--color-secondary)/0.2)] rounded-full"
-            aria-hidden="true"
-          />
-
-          {/* Content */}
-          <div className="relative z-10 max-w-md">
-            {/* Eyebrow with line */}
-            <div className="flex items-center gap-3 mb-5">
-              <span className="h-px w-10 bg-[hsl(var(--color-secondary))]" />
-              <p className="text-[hsl(var(--color-secondary))] text-xs font-bold uppercase tracking-[0.2em]">
-                {left.eyebrow}
-              </p>
-            </div>
-
-            <h2 className="text-[hsl(var(--color-primary-foreground))] text-3xl sm:text-4xl font-bold leading-tight mb-8">
-              {left.title}
-            </h2>
-
-            <Link
-              href={left.ctaHref}
-              className="group inline-flex items-center gap-3 bg-[hsl(var(--color-secondary))] hover:bg-[hsl(var(--color-secondary-dark))] transition-all text-[hsl(var(--color-secondary-foreground))] font-bold text-sm tracking-[0.15em] uppercase px-8 py-3.5 rounded-full shadow-gold hover:shadow-glow-gold"
-            >
-              {left.ctaLabel}
-              <i
-                className="ti ti-arrow-right text-base group-hover:translate-x-1 transition-transform"
-                aria-hidden="true"
-              />
-            </Link>
+    <section className="bg-[hsl(var(--color-background))] py-20 px-6 sm:px-12 lg:px-20">
+      <div className="max-w-7xl mx-auto">
+        {/* HEADER */}
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-3 mb-3">
+            <span className="h-px w-10 bg-[hsl(var(--color-secondary))]" />
+            <p className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[hsl(var(--color-secondary))]">
+              {eyebrow}
+            </p>
+            <span className="h-px w-10 bg-[hsl(var(--color-secondary))]" />
           </div>
+
+          <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-3">
+            Why <span className="text-gradient-luxury">Choose Us</span> ?
+          </h2>
+
+          <p className="text-[hsl(var(--color-foreground-muted))] text-sm sm:text-base max-w-2xl mx-auto">
+            {subtitle}
+          </p>
         </div>
 
-        {/* RIGHT — Gold banner */}
-        <div className="relative min-h-[480px] flex items-center px-8 sm:px-12 py-16 overflow-hidden">
-          {/* Background image */}
-          <Image src={right.image} alt="" fill className="object-cover" />
+        {/* FEATURE CARDS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => {
+            const colors = [
+              "bg-[hsl(var(--color-primary))]",
+              "bg-pink-500",
+              "bg-orange-500",
+              "bg-indigo-500",
+            ];
+            const iconBg = colors[index % colors.length];
 
-          {/* Gold overlay (theme-aware) */}
-          <div
-            className="absolute inset-0 bg-[hsl(var(--color-secondary)/0.92)]"
-            aria-hidden="true"
-          />
-
-          {/* Decorative shapes */}
-          <div
-            className="absolute -top-20 -left-20 w-64 h-64 bg-[hsl(var(--color-primary-dark)/0.15)] rounded-full blur-3xl"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute -bottom-16 -right-16 w-56 h-56 border-[3px] border-[hsl(var(--color-primary-dark)/0.15)] rounded-full"
-            aria-hidden="true"
-          />
-
-          {/* Content */}
-          <div className="relative z-10 w-full max-w-md">
-            <h3 className="text-[hsl(var(--color-primary-dark))] text-2xl sm:text-3xl font-bold mb-3">
-              {right.title}
-            </h3>
-            <p className="text-[hsl(var(--color-primary-dark)/0.85)] text-[14px] leading-relaxed mb-8">
-              {right.subtitle}
-            </p>
-
-            <ul className="space-y-5">
-              {right.practices.map((item) => (
-                <li
-                  key={item.label}
-                  className="group flex items-center gap-4 text-[hsl(var(--color-primary-dark))]"
+            return (
+              <div
+                key={feature.title}
+                className="group relative bg-[hsl(var(--color-surface))] rounded-2xl border-2 border-[hsl(var(--color-secondary)/0.4)] hover:border-[hsl(var(--color-secondary))] p-8 text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-500"
+              >
+                <div
+                  className={`w-16 h-16 mx-auto rounded-full ${iconBg} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
                 >
-                  <div className="w-11 h-11 rounded-xl bg-[hsl(var(--color-primary-dark)/0.1)] group-hover:bg-[hsl(var(--color-primary-dark))] flex items-center justify-center transition-all duration-300">
-                    <i
-                      className={`ti ${item.icon} text-xl group-hover:text-[hsl(var(--color-secondary))] transition-colors`}
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <span className="text-base sm:text-lg font-bold">
-                    {item.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
+                  <i
+                    className={`ti ${feature.icon} text-3xl text-white`}
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <h3 className="text-lg font-bold text-[hsl(var(--color-foreground))] mb-3 group-hover:text-[hsl(var(--color-primary))] transition-colors duration-300">
+                  {feature.title}
+                </h3>
+
+                <p className="text-[13px] text-[hsl(var(--color-foreground-muted))] leading-relaxed">
+                  {feature.description}
+                </p>
+
+                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-12 h-1 bg-[hsl(var(--color-secondary))] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ====================================== */}
+        {/* HIGHLIGHTS STRIP — Quick value tags    */}
+        {/* ====================================== */}
+        <div className="mt-12 bg-[hsl(var(--color-primary))] rounded-2xl p-6 sm:p-8 shadow-luxury">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {highlights.map((item) => (
+              <div
+                key={item.label}
+                className="group flex items-center gap-3 justify-center sm:justify-start"
+              >
+                <div className="w-11 h-11 rounded-xl bg-[hsl(var(--color-secondary)/0.15)] group-hover:bg-[hsl(var(--color-secondary))] flex items-center justify-center transition-all duration-300 shrink-0">
+                  <i
+                    className={`ti ${item.icon} text-xl text-[hsl(var(--color-secondary))] group-hover:text-[hsl(var(--color-secondary-foreground))] transition-colors`}
+                    aria-hidden="true"
+                  />
+                </div>
+                <span className="text-sm sm:text-base font-bold text-[hsl(var(--color-primary-foreground))]">
+                  {item.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

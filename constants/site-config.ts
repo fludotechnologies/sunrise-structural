@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   tagline: "Engineering & Training",
   email: "structuralsunrise@gmail.com",
   phone: "058-633 0155",
-  whatsapp: "971586330155", 
+  whatsapp: "971586330155",
   address: "Al Batha Area,Sharjah UAE",
   copyright: "© 2026 Sunrise Structural. All rights reserved.",
 } as const;
@@ -19,11 +19,6 @@ export const SOCIAL_LINKS = [
     icon: "ti-brand-instagram",
     href: "#",
     label: "Instagram",
-  },
-  {
-    icon: "ti-brand-linkedin",
-    href: "#",
-    label: "LinkedIn",
   },
 ] as const;
 
@@ -89,6 +84,9 @@ export const SERVICES = [
     description:
       "Specialized training in C, C++, Java, Python, and more coding languages.",
     features: ["C / C++", "Java", "Python", "Web Development", "And More"],
+    icon: "ti-code",
+    category: "Coding",
+    isCore: true,
   },
   {
     image:
@@ -97,6 +95,9 @@ export const SERVICES = [
     description:
       "Engineering software training — Revit, AutoCAD, 3DS Max, and BIM from scratch to advanced.",
     features: ["Revit", "AutoCAD", "3DS Max", "BIM 360", "And More"],
+    icon: "ti-building-skyscraper",
+    category: "BIM & CAD",
+    isCore: true,
   },
   {
     image:
@@ -111,6 +112,9 @@ export const SERVICES = [
       "Delivery Management",
       "And More",
     ],
+    icon: "ti-briefcase",
+    category: "Advisory",
+    isCore: true,
   },
   {
     image:
@@ -125,6 +129,9 @@ export const SERVICES = [
       "Exterior Design",
       "And More",
     ],
+    icon: "ti-ruler-measure",
+    category: "Design",
+    isCore: false,
   },
   {
     image:
@@ -139,6 +146,9 @@ export const SERVICES = [
       "Compliance Reports",
       "And More",
     ],
+    icon: "ti-shield-check",
+    category: "Safety",
+    isCore: false,
   },
   {
     image:
@@ -153,31 +163,48 @@ export const SERVICES = [
       "Custom Build",
       "And More",
     ],
+    icon: "ti-cpu",
+    category: "Hardware",
+    isCore: false,
   },
 ] as const;
 
 export const SUSTAINABILITY_CONTENT = {
-  left: {
-    eyebrow: "Sustainability",
-    title: "Committed To Keep People Healthy & Safe",
-    ctaLabel: "Get In Touch",
-    ctaHref: "#contact",
-    image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80",
-  },
-  right: {
-    title: "We Follow Best Practices",
-    subtitle:
-      "We are always challenging ourselves to get the best in the industry.",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
-    practices: [
-      { icon: "ti-recycle", label: "Sustainability" },
-      { icon: "ti-clock", label: "Project On Time" },
-      { icon: "ti-device-desktop", label: "Modern Technology" },
-      { icon: "ti-tools", label: "Latest Designs" },
-    ],
-  },
+  eyebrow: "Why Choose Us",
+  title: "Why Sunrise Structural ?",
+  subtitle: "",
+  highlights: [
+    { icon: "ti-recycle", label: "Sustainability" },
+    { icon: "ti-clock", label: "Project On Time" },
+    { icon: "ti-device-desktop", label: "Modern Technology" },
+    { icon: "ti-tools", label: "Latest Designs" },
+  ],
+  features: [
+    {
+      icon: "ti-school",
+      title: "Develop & Training",
+      description:
+        "Hands-on practical training led by industry experts using real-world projects and the latest engineering software.",
+    },
+    {
+      icon: "ti-briefcase",
+      title: "Job Placement",
+      description:
+        "Strong industry connections and dedicated placement support to help every student land their dream role.",
+    },
+    {
+      icon: "ti-clipboard-check",
+      title: "Test & Interview",
+      description:
+        "Mock interviews, technical assessments, and portfolio reviews to fully prepare you for the hiring process.",
+    },
+    {
+      icon: "ti-user-check",
+      title: "Career Counselling",
+      description:
+        "One-on-one mentorship and personalized guidance to map out your ideal career path in engineering.",
+    },
+  ],
 } as const;
 
 export const SUSTAINABILITY_BADGES = [

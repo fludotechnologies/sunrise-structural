@@ -19,79 +19,99 @@ export default function AboutSection() {
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section header */}
-        <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-3 mb-3">
-            <span className="h-px w-10 bg-[hsl(var(--color-secondary))]" />
-            <p className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[hsl(var(--color-secondary))]">
-              About Us
-            </p>
-            <span className="h-px w-10 bg-[hsl(var(--color-secondary))]" />
+        {/* Main Grid — Image LEFT, Content RIGHT */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* LEFT — Image */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-luxury">
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80"
+                alt="Our team collaborating"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Decorative accent behind image */}
+            <div
+              className="absolute -bottom-6 -left-6 w-32 h-32 bg-[hsl(var(--color-secondary)/0.15)] rounded-2xl -z-10"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute -top-6 -right-6 w-24 h-24 border-[3px] border-[hsl(var(--color-primary)/0.25)] rounded-2xl -z-10"
+              aria-hidden="true"
+            />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(var(--color-foreground))]">
-            Building Excellence{" "}
-            <span className="text-gradient-luxury">Together</span>
-          </h2>
+
+          {/* RIGHT — Content */}
+          <div>
+            {/* Eyebrow */}
+            <h2 className="text-3xl sm:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-3">
+              About <span className="text-gradient-luxury">Us</span>
+            </h2>
+
+            {/* Sub-title (italic blue style like reference) */}
+            <p className="text-lg sm:text-xl italic font-semibold text-[hsl(var(--color-primary))] leading-snug mb-6">
+              {ABOUT_CONTENT.title}
+            </p>
+
+            {/* Paragraphs */}
+            <div className="space-y-4 text-[14.5px] leading-relaxed text-[hsl(var(--color-foreground-muted))]">
+              <p>{ABOUT_CONTENT.paragraph1}</p>
+              <p>{ABOUT_CONTENT.paragraph2}</p>
+            </div>
+
+            {/* CTA button */}
+            <Link
+              href="#contact"
+              className="mt-8 inline-flex items-center gap-2 bg-[hsl(var(--color-secondary))] hover:bg-[hsl(var(--color-secondary-dark))] transition-all text-[hsl(var(--color-secondary-foreground))] font-semibold text-sm px-7 py-3.5 rounded-full group shadow-gold hover:shadow-glow-gold"
+            >
+              Learn More
+              <i
+                className="ti ti-arrow-right text-lg group-hover:translate-x-1 transition-transform"
+                aria-hidden="true"
+              />
+            </Link>
+          </div>
         </div>
 
-        {/* Main card */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 shadow-luxury rounded-2xl overflow-hidden">
-          {/* LEFT — Primary card with decorative elements */}
-          <div className="relative bg-gradient-to-br from-[hsl(var(--color-primary))] to-[hsl(var(--color-primary-dark))] p-8 sm:p-12 overflow-hidden">
-            {/* Decorative shapes */}
-            <div
-              className="absolute -top-16 -right-16 w-48 h-48 border-[3px] border-[hsl(var(--color-secondary)/0.25)] rounded-full"
-              aria-hidden="true"
-            />
-            <div
-              className="absolute -bottom-20 -left-20 w-56 h-56 border-[3px] border-white/10 rounded-full"
-              aria-hidden="true"
-            />
-            <div
-              className="absolute top-8 right-8 w-12 h-12 bg-[hsl(var(--color-secondary)/0.2)] rounded-full"
-              aria-hidden="true"
-            />
-
-            {/* Content */}
-            <div className="relative z-10">
-              <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-[hsl(var(--color-secondary))] mb-4">
-                {ABOUT_CONTENT.eyebrow}
+        {/* BELOW — Stats Counter Section */}
+        <div className="mt-20">
+          {/* Optional small heading */}
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <span className="h-px w-10 bg-[hsl(var(--color-secondary))]" />
+              <p className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[hsl(var(--color-secondary))]">
+                Our Impact
               </p>
-              <h3 className="text-3xl sm:text-4xl font-bold leading-tight text-[hsl(var(--color-primary-foreground))] mb-6">
-                {ABOUT_CONTENT.title}
-              </h3>
-
-              <div className="h-1 w-16 bg-[hsl(var(--color-secondary))] mb-6 rounded-full" />
-
-              <p className="text-[14px] leading-relaxed text-[hsl(var(--color-primary-foreground)/0.85)] mb-5">
-                {ABOUT_CONTENT.paragraph1}
-              </p>
-              <p className="text-[14px] leading-relaxed text-[hsl(var(--color-primary-foreground)/0.85)] mb-8">
-                {ABOUT_CONTENT.paragraph2}
-              </p>
-
-              {/* CTA button - GOLD for premium feel */}
-              <Link
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-[hsl(var(--color-secondary))] hover:bg-[hsl(var(--color-secondary-dark))] transition-all text-[hsl(var(--color-secondary-foreground))] font-semibold text-sm px-7 py-3.5 rounded-full group shadow-gold hover:shadow-glow-gold"
-              >
-                Learn More
-                <i
-                  className="ti ti-arrow-right text-lg group-hover:translate-x-1 transition-transform"
-                  aria-hidden="true"
-                />
-              </Link>
+              <span className="h-px w-10 bg-[hsl(var(--color-secondary))]" />
             </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-[hsl(var(--color-foreground))]">
+              Numbers That Speak{" "}
+              <span className="text-gradient-luxury">For Us</span>
+            </h3>
           </div>
 
-          {/* RIGHT — Stats grid */}
-          <div className="bg-[hsl(var(--color-surface))] grid grid-cols-2 grid-rows-2">
+          {/* Stats grid */}
+          <div className="bg-[hsl(var(--color-surface))] rounded-2xl shadow-luxury grid grid-cols-2 lg:grid-cols-4 overflow-hidden">
             {STATS.map((stat, index) => (
               <div
                 key={stat.label}
-                className={`group relative p-6 sm:p-8 flex flex-col justify-center hover:bg-[hsl(var(--color-secondary)/0.05)] transition-colors duration-300
-                  ${index % 2 === 0 ? "border-r border-[hsl(var(--color-border))]" : ""}
-                  ${index < 2 ? "border-b border-[hsl(var(--color-border))]" : ""}
+                className={`group relative p-6 sm:p-8 flex flex-col items-center text-center justify-center hover:bg-[hsl(var(--color-secondary)/0.05)] transition-colors duration-300
+                  ${
+                    index !== STATS.length - 1
+                      ? "lg:border-r border-[hsl(var(--color-border))]"
+                      : ""
+                  }
+                  ${
+                    index % 2 === 0
+                      ? "border-r lg:border-r border-[hsl(var(--color-border))]"
+                      : ""
+                  }
+                  ${
+                    index < 2
+                      ? "border-b lg:border-b-0 border-[hsl(var(--color-border))]"
+                      : ""
+                  }
                 `}
               >
                 {/* Icon */}
@@ -118,7 +138,7 @@ export default function AboutSection() {
                 </p>
 
                 {/* Hover accent line */}
-                <div className="absolute bottom-0 left-0 w-0 h-0.75 bg-[hsl(var(--color-secondary))] group-hover:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[hsl(var(--color-secondary))] group-hover:w-full transition-all duration-500" />
               </div>
             ))}
           </div>

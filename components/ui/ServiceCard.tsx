@@ -8,6 +8,7 @@ interface ServiceCardProps {
   href?: string;
   index?: number;
   category?: string;
+  icon?: string;
 }
 
 export default function ServiceCard({
@@ -17,53 +18,49 @@ export default function ServiceCard({
   href = "#",
   index,
   category = "Service",
+  icon = "ti-bolt",
 }: ServiceCardProps) {
   return (
     <Link
       href={href}
-      className="group relative block bg-[hsl(var(--color-surface))] rounded-3xl overflow-hidden isolate"
+      className="group relative block bg-[hsl(var(--color-surface))] rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 shadow-sm hover:shadow-xl"
     >
-      <div className="relative w-full aspect-[4/5] overflow-hidden">
+      {/* Image */}
+      <div className="relative w-full aspect-[16/11] overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover transition-all duration-[1200ms] ease-out group-hover:scale-110"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-
         <div
-          className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10"
-          aria-hidden="true"
-        />
-
-        <div
-          className="absolute inset-0 bg-linear-to-t from-[hsl(var(--color-primary)/0.6)] via-[hsl(var(--color-primary)/0.1)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-          aria-hidden="true"
-        />
-
-        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 z-10">
-          <div className="h-[2px] w-10 bg-[hsl(var(--color-secondary))] mb-4 group-hover:w-20 transition-all duration-500 ease-out" />
-
-          {/* Title */}
-          <h3 className="text-2xl sm:text-[26px] font-bold text-white leading-tight mb-3 group-hover:text-[hsl(var(--color-secondary))] transition-colors duration-300">
-            {title}
-          </h3>
-
-          <p className="text-[13.5px] text-white/85 leading-relaxed line-clamp-3">
-            {description}
-          </p>
-        </div>
-
-        <div
-          className="absolute inset-0 rounded-3xl ring-0 ring-[hsl(var(--color-secondary)/0)] group-hover:ring-2 group-hover:ring-[hsl(var(--color-secondary)/0.5)] transition-all duration-500 pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--color-primary)/0.4)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           aria-hidden="true"
         />
       </div>
 
-      <div
-        className="absolute -inset-4 bg-[hsl(var(--color-secondary)/0)] group-hover:bg-[hsl(var(--color-secondary)/0.15)] blur-2xl -z-10 transition-all duration-700 rounded-3xl"
-        aria-hidden="true"
-      />
+      {/* Floating icon */}
+      <div className="relative -mt-8 ml-6 w-16 h-16 rounded-2xl bg-[hsl(var(--color-secondary))] flex items-center justify-center shadow-xl shadow-[hsl(var(--color-secondary)/0.3)] group-hover:rotate-6 group-hover:scale-110 transition-all duration-500 z-10">
+        <i
+          className={`ti ${icon} text-3xl text-[hsl(var(--color-secondary-foreground))]`}
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-6 pt-4">
+        <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[hsl(var(--color-secondary))] mb-2">
+          {category}
+        </p>
+
+        <h3 className="text-xl font-bold text-[hsl(var(--color-foreground))] mb-3 group-hover:text-[hsl(var(--color-primary))] transition-colors duration-300">
+          {title}
+        </h3>
+
+        <p className="text-sm text-[hsl(var(--color-foreground-muted))] leading-relaxed line-clamp-3">
+          {description}
+        </p>
+      </div>
     </Link>
   );
 }

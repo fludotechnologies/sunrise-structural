@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { NAV_LINKS, SITE_CONFIG } from "@/constants/site-config";
 
@@ -35,13 +36,17 @@ export default function Navbar() {
             : "scale-100 rounded-none border-b border-[hsl(var(--color-border))] bg-[hsl(var(--color-surface))] shadow-none"
         }`}
       >
-        <nav className="mx-auto flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center px-6 sm:px-12 lg:px-20 py-4 max-w-7xl">
+        <nav className="mx-auto flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center px-6 sm:px-12 lg:px-20 py-3 max-w-7xl">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-[38px] h-[38px] rounded-lg bg-[hsl(var(--color-primary))] flex items-center justify-center shadow-md">
-              <i
-                className="ti ti-sun text-[hsl(var(--color-primary-foreground))] text-xl"
-                aria-hidden="true"
+            <div className="relative w-[44px] h-[44px] rounded-lg overflow-hidden shadow-md ring-1 ring-[hsl(var(--color-border))]">
+              <Image
+                src="/images/logo.png"
+                alt={`${SITE_CONFIG.name} logo`}
+                fill
+                sizes="44px"
+                className="object-cover"
+                priority
               />
             </div>
 
