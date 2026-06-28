@@ -74,8 +74,7 @@ export default function TestimonialsSection() {
               </p>
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-[hsl(var(--color-foreground))] leading-[1.1] max-w-2xl">
-              Trusted by industry{" "}
-              <span className="text-gradient-luxury">leaders</span> worldwide
+              Student Testimonials
             </h2>
           </div>
 
