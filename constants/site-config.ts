@@ -84,7 +84,7 @@ export const STATS = [
 export const SERVICES = [
   {
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
     title: "Computer Programming",
     description:
       "Specialized training in C, C++, Java, Python, and more coding languages.",
@@ -92,7 +92,7 @@ export const SERVICES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
     title: "Professional Courses",
     description:
       "Engineering software training — Revit, AutoCAD, 3DS Max, and BIM from scratch to advanced.",
@@ -100,7 +100,7 @@ export const SERVICES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=800&q=80",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
     title: "Consultancy",
     description:
       "End-to-end project design and delivery — concept to completion on time.",
@@ -114,7 +114,7 @@ export const SERVICES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
     title: "Architecture",
     description:
       "Our architects visit your premises and deliver the best aesthetic solution.",
@@ -128,7 +128,7 @@ export const SERVICES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
     title: "Safety Service Courses",
     description:
       "Building safety equipment, engineers, and labour to keep your site compliant.",
@@ -142,7 +142,7 @@ export const SERVICES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
     title: "Computer Hardware Training",
     description:
       "Computer Software & Hardware courses for Corporates and Individuals.",
@@ -189,75 +189,75 @@ export const SUSTAINABILITY_BADGES = [
 
 export const TESTIMONIALS = [
   {
-    initials: "LH",
-    name: "Liz Haward",
-    role: "Engineering Manager",
-    company: "Skyline Constructions",
+    initials: "AR",
+    name: "Arun Raj",
+    role: "B.Tech Civil Engineering",
+    company: "NIT Calicut",
     quote:
-      "Best decision I made was approaching Sunrise Structural for my upcoming project. The team delivered beyond expectations with precision and professionalism.",
+      "I joined the BIM course not knowing what to expect. Three months later I had a job offer before I even graduated. The hands-on Revit sessions and live project exposure made all the difference.",
     rating: 5,
   },
   {
-    initials: "MM",
-    name: "Mitchell Mariaan",
-    role: "Interior Designer",
-    company: "Mariaan Studio",
+    initials: "PN",
+    name: "Priya Nambiar",
+    role: "M.Tech Structural Engineering",
+    company: "TKM College of Engineering",
     quote:
-      "I was amazed at how efficiently the team handled my project. Professional, fast, and results-driven from concept to completion.",
+      "Honestly I was skeptical at first. But the way they teach structural modelling with real Kerala project examples just clicked for me. Got my internship at a top Kochi firm within weeks of completing the course.",
     rating: 5,
   },
   {
-    initials: "AK",
-    name: "Anand Krishnan",
-    role: "Senior MEP Engineer",
-    company: "Cochin Tech Spaces",
+    initials: "SK",
+    name: "Sreejith Kumar",
+    role: "Diploma in Civil Engineering",
+    company: "Govt. Polytechnic Thrissur",
     quote:
-      "Excellent coordination and technical depth. Their expertise in Kerala's specific structural requirements helped us navigate a complex waterfront project seamlessly.",
+      "Coming from a diploma background I was worried I would struggle to keep up. The instructors were incredibly patient and made sure no one was left behind. Now I am working as a BIM modeller and loving it.",
     rating: 5,
   },
   {
-    initials: "RV",
-    name: "Ramesh Varma",
-    role: "Managing Director",
-    company: "Malabar Developers",
+    initials: "FA",
+    name: "Fathima Ashraf",
+    role: "B.Arch Final Year",
+    company: "School of Architecture Trivandrum",
     quote:
-      "Highly professional team. They bring international BIM standards to our local projects, ensuring zero clashes and significant cost savings during construction.",
+      "As an architecture student I always thought BIM was only for engineers. This course completely changed that. I now coordinate models across disciplines and my thesis project quality went up by miles.",
     rating: 5,
   },
   {
-    initials: "AS",
-    name: "Ann Smith",
-    role: "Project Manager",
-    company: "Urban Build Co.",
+    initials: "MJ",
+    name: "Mohammed Jasim",
+    role: "Civil Engineering Graduate",
+    company: "MES College of Engineering",
     quote:
-      "Sunrise Structural provided the best team for my project. On-time, on-budget, and the quality of work was simply outstanding.",
+      "The placement support here is real, not just a promise. They helped me build my portfolio, prepared me for interviews, and followed up even after I got placed. Feels like they genuinely care about your career.",
     rating: 5,
   },
   {
-    initials: "RK",
-    name: "Rahul Khanna",
-    role: "Civil Engineer",
-    company: "Infra Solutions",
+    initials: "DS",
+    name: "Devika Suresh",
+    role: "M.Tech Construction Management",
+    company: "CUSAT",
     quote:
-      "Their BIM training transformed my career. The instructors are industry experts with deep real-world experience and patience.",
+      "I had already done two online BIM courses before this one. None of them compared. The live project workflow, clash detection sessions, and mentor feedback were on a completely different level.",
     rating: 5,
   },
   {
-    initials: "SP",
-    name: "Sarah Peterson",
-    role: "Senior Architect",
-    company: "Peterson Designs",
+    initials: "RR",
+    name: "Rohit Ramachandran",
+    role: "B.Tech Civil Engineering",
+    company: "College of Engineering Trivandrum",
     quote:
-      "Outstanding consultancy work. They turned our complex project into a smooth, well-managed journey from start to finish.",
+      "Weekend batches worked perfectly around my college schedule. Six months ago I had zero knowledge of Revit. Today I am freelancing for a structural firm in Calicut while finishing my final semester.",
     rating: 5,
   },
   {
-    initials: "JM",
-    name: "James Miller",
-    role: "Construction Lead",
-    company: "Miller & Sons",
+    initials: "AT",
+    name: "Anjali Thomas",
+    role: "Fresh Civil Engineering Graduate",
+    company: "Rajagiri School of Engineering",
     quote:
-      "Reliable, skilled, and detail-oriented. The safety services they provided kept our site running smoothly without a single incident.",
+      "Every session felt practical and grounded. No boring theory slides — just real models, real problems, and real solutions. I walked into my first job interview confident and walked out with an offer.",
     rating: 5,
   },
 ] as const;
