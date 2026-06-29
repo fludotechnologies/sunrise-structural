@@ -44,7 +44,7 @@ export const ABOUT_CONTENT = {
   eyebrow: "Let's Move Forward",
   title: "23 Years Of Undefeated Success",
   paragraph1:
-    "Our services started in 1999 as a CAD Education company. We do corporate and Individual Training for Engineers and Managers.",
+    "Our services started in 1999 as a Architectural Education company. We do corporate and provide Individual Training for Engineers and Managers.",
   paragraph2:
     "We have completed local and International projects in various sectors. Especially in BIM (Revit – Architecture / Structure / MEP, Navisworks Manage, BIM 360 and BIM Collaborative Pro), As built AutoCAD, Electrical Designing, MEP and Interior Designing.",
 } as const;
