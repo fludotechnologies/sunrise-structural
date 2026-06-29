@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   email: "structuralsunrise@gmail.com",
   phone: "058-633 0155",
   whatsapp: "971586330155",
-  address: "Al Batha Area,Sharjah UAE",
+  address: "AL MAJAZ,AL BUHEIRA CORNICHE STREET OFFICE 1206 AL BATHA TOWER,SHARJAH,UAE",
   copyright: "© 2026 Sunrise Structural. All rights reserved.",
 } as const;
 
